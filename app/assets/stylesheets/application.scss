@@ -1,4 +1,8 @@
 // Custom bootstrap variables must be set or imported before bootstrap itself.
+/*
+ *= require jquery-ui
+ */
+
 @import "bootstrap";
 @import "cover";
 @import "pages";
