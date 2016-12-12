@@ -1,0 +1,29 @@
+<div class="container container-show">
+  <p>
+    <strong>Date:</strong>
+    <%= @privsesh.date %>
+  </p>
+
+  <p>
+    <strong>Location:</strong>
+    <%= @privsesh.location %>
+  </p>
+
+  <p>
+    <strong>Activity:</strong>
+    <%= @privsesh.activity %>
+  </p>
+
+  <p>
+    <strong>Rating:</strong>
+    <%= @privsesh.rating %>
+  </p>
+
+  <p>
+    <strong>Note:</strong>
+    <%= @privsesh.note %>
+  </p>
+
+  <%= link_to 'Edit', edit_privsesh_path(@privsesh) %> |
+  <%= link_to 'Back', privseshes_path %>
+</div>

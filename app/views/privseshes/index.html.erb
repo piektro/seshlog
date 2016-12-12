@@ -1,0 +1,35 @@
+ <div class="container">
+  <h1>Your sessions</h1>
+
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Date</th>
+        <th>Location</th>
+        <th>Activity</th>
+        <th>Rating</th>
+        <th>Note</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @privseshes.each do |privsesh| %>
+        <tr>
+          <td><%= privsesh.date %></td>
+          <td><%= privsesh.location %></td>
+          <td><%= privsesh.activity %></td>
+          <td><%= privsesh.rating %></td>
+          <td><%= privsesh.note %></td>
+          <td><%= link_to 'View', privsesh %></td>
+          <td><%= link_to 'Edit', edit_privsesh_path(privsesh) %></td>
+          <td><%= link_to 'Delete', privsesh, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Session', new_privsesh_path %>
+</div>

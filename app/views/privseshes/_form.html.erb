@@ -1,0 +1,41 @@
+<%= form_for(privsesh) do |f| %>
+  <% if privsesh.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(privsesh.errors.count, "error") %> prohibited this privsesh from being saved:</h2>
+
+      <ul>
+      <% privsesh.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :date %>
+    <%= f.date_select :date, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :activity %>
+    <%= f.text_field :activity, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :rating %>
+    <%= f.number_field :rating, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :note %>
+    <%= f.text_area :note, class: "form-control"  %>
+  </div>
+
+    <%= f.submit 'Submit Sesh', class: "btn btn-primary" %>
+
+<% end %>
