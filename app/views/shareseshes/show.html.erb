@@ -1,0 +1,31 @@
+<div class="container">
+  <p>
+    <strong>User:</strong>
+    <%= @sharesesh.user.email %>
+  </p>
+
+  <p>
+    <strong>When:</strong>
+    <%= @sharesesh.when %>
+  </p>
+
+  <p>
+    <strong>Where:</strong>
+    <%= @sharesesh.where %>
+  </p>
+
+  <p>
+    <strong>Subject:</strong>
+    <%= @sharesesh.subject %>
+  </p>
+
+  <p>
+    <strong>Yoursesh:</strong>
+    <%= @sharesesh.yoursesh %>
+  </p>
+
+  <% if @sharesesh.user == current_user %>
+    <%= link_to 'Edit', edit_sharesesh_path(@sharesesh) %> |
+  <% end %>
+  <%= link_to 'Back', shareseshes_path %>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Shared sessions</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>When</th>
+        <th>Where</th>
+        <th>Subject</th>
+        <th>The sesh</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @shareseshes.each do |sharesesh| %>
+        <tr>
+          <td><%= sharesesh.user.email %></td>
+          <td><%= sharesesh.when %></td>
+          <td><%= sharesesh.where %></td>
+          <td><%= sharesesh.subject %></td>
+          <td><%= sharesesh.yoursesh %></td>
+          <td><%= link_to 'Show', sharesesh %></td>
+          <% if sharesesh.user == current_user %>
+            <td><%= link_to 'Edit', edit_sharesesh_path(sharesesh) %></td>
+            <td><%= link_to 'Destroy', sharesesh, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <% if user_signed_in? %>
+    <%= link_to 'Share a new Sesh', new_sharesesh_path %>
+  <% end %>
+
+</div>

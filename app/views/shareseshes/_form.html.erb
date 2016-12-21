@@ -1,0 +1,36 @@
+<%= form_for(sharesesh) do |f| %>
+  <% if sharesesh.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sharesesh.errors.count, "error") %> prohibited this sharesesh from being saved:</h2>
+
+      <ul>
+      <% sharesesh.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :when %>
+    <%= f.date_select :when, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :where %>
+    <%= f.text_field :where, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :subject %>
+    <%= f.text_field :subject, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :yoursesh %>
+    <%= f.text_area :yoursesh, class: "form-control" %>
+  </div>
+
+    <%= f.submit 'Share Sesh', class: "btn btn-primary" %>
+
+<% end %>

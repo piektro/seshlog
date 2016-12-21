@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161210205937) do
+ActiveRecord::Schema.define(version: 20161213172949) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 20161210205937) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_privseshes_on_user_id"
+  end
+
+  create_table "shareseshes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.date     "when"
+    t.string   "where"
+    t.string   "subject"
+    t.text     "yoursesh"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_shareseshes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
