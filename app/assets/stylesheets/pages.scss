@@ -5,19 +5,41 @@
 	-o-background-size: cover;
 	background-size: cover;
 }
+.inner-tophome{
+	background-color: transparent;
+}
+.inner-toppage{
+	background-color: #00BBE9;
+	padding-bottom: 3.5rem;
+}
 
+.btn-primary {
+	background-color: #2c3e50;
+	border: none;
+	line-height: 2em;
+}
+.btn-primary:hover {
+	background-color: #2c3e50;
+	border: none;
+	color: #00ff00;
+}
 .btn-secondary {
 	background-color: #2c3e50;
 	border: none;
-	color: rgba(255,255,255,1);
+	color: #fff;
 }
-
+.btn-secondary:hover {
+	background-color: #2c3e50;
+	border: none;
+	color: #00ff00;
+}
 .cover-heading {
 	color: rgba(44,62,80,1);
+	line-height: 1.5em;
 }
-
 .lead {
 	color: rgba(44,62,80,1);
+	padding-bottom: 50px;
 }
 .container-show {
 	text-align: left;

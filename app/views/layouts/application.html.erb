@@ -19,24 +19,28 @@
 
         <div class="cover-container">
           <!-- Navigation Bar -->
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Seshlog</h3>
-              <nav class="nav nav-masthead">
-                <ul class="nav navbar-nav">
-                  <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link active" %></li>
-                  <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
-                  <li class="nav-item"><%= link_to "Contact", contact_path, class: "nav-link" %></li>
-                  <% if user_signed_in? %>
-                    <li class="nav-item float-md-right"><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
-                  <% else %>
-                    <li class="nav-item float-md-right"><%= link_to "Sign up", signup_path, class: "btn btn-secondary" %></li>
-                    <li class="nav-item float-md-right"><%= link_to "Sign in", signin_path, class: "nav-link" %></li>
-                  <% end %>
-                </ul>
-              </nav>
+            <div class="masthead clearfix">
+              <% if action_name == "home" %>
+                <div class="inner inner-tophome">
+              <% else %>
+                <div class="inner inner-toppage">
+              <% end %>
+                <h2 class="masthead-brand">Seshlog</h2>
+                <nav class="nav nav-masthead">
+                  <ul class="nav navbar-nav">
+                    <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link active" %></li>
+                    <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
+                    <li class="nav-item"><%= link_to "Contact", contact_path, class: "nav-link" %></li>
+                    <% if user_signed_in? %>
+                      <li class="nav-item float-md-right"><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+                    <% else %>
+                      <li class="nav-item float-md-right"><%= link_to "Sign up", signup_path, class: "btn btn-secondary" %></li>
+                      <li class="nav-item float-md-right"><%= link_to "Sign in", signin_path, class: "nav-link" %></li>
+                    <% end %>
+                  </ul>
+                </nav>
+              </div>
             </div>
-          </div>
           
           <!-- Flash Messages -->
           <% flash.each do |name, message| %>
@@ -50,7 +54,7 @@
 
           <div class="mastfoot">
             <div class="inner">
-              <p>Made in <a href="http://onemonth.com/">One Month</a>, by Mariachi</p>
+              <p>Made in <a href="http://onemonth.com/">One Month</a> by Mariachi</p>
             </div>
           </div>
 

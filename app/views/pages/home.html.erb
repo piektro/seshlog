@@ -1,15 +1,15 @@
 <div class="inner cover">
 	<% if user_signed_in? %>
-		<h1 class="cover-heading">Your seshlog is active</h1>
+		<h3 class="cover-heading">Your seshlog is active</h3>
 		<p class="lead">Every journey begins with a session.</p>
 		<p class="lead">
 			<a href="#" class="btn btn-secondary">See dashboard</a>
 		</p>
 	<% else %>
-		<h1 class="cover-heading">Log your sessions</h1>
-		<p class="lead">Every journey begins with a session.</p>
+		<h1 class="cover-heading">Start logging your sessions.</h1>
+		<h3 class="lead">Every journey begins with a session.</h3>
 		<p class="lead">
-			<%= link_to "Start your seshlog", new_user_registration_path, class: "btn btn-secondary" %>
+			<%= link_to "Start your Seshlog", new_user_registration_path, class: "btn btn-primary" %>
 		</p>
 	<% end %>
 </div>
