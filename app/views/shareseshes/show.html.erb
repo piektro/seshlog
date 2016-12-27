@@ -8,16 +8,9 @@
             <%= @sharesesh.subject %>
           </h4>
           <p class="card-text">
-            <strong>Who:</strong>
-            <%= @sharesesh.user.email %>
-          </p>
-          <p class="card-text">
-            <strong>When:</strong>
-            <%= @sharesesh.when %>
-          </p>
-
-          <p class="card-text">
-            <strong>Where:</strong>
+            <strong><%= link_to @sharesesh.user.username, user_path(@sharesesh.user.username) %></strong> on  <%= @sharesesh.when %>
+          <br>
+            <strong>Location:</strong>
             <%= @sharesesh.where %>
           </p>
           <p>
@@ -27,7 +20,7 @@
           <% if @sharesesh.user == current_user %>
             <%= link_to 'Edit', edit_sharesesh_path(@sharesesh) %> | <%= link_to 'Delete', @sharesesh, method: :delete, data: { confirm: 'Are you sure?' } %> | 
           <% end %>
-          <%= link_to 'Back', shareseshes_path %>
+          <%= link_to 'Back to shared sessions', shareseshes_path %>
         </div>
       </div>
     </div>
