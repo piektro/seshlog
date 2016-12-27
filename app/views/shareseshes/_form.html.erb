@@ -1,9 +1,9 @@
 <%= form_for(sharesesh) do |f| %>
   <% if sharesesh.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(sharesesh.errors.count, "error") %> prohibited this sharesesh from being saved:</h2>
+    <div id="error_explanation" class="error_container">
+      <p class="validation_error"><%= pluralize(sharesesh.errors.count, "error") %>, please correct before saving the session:</p>
 
-      <ul>
+      <ul class="validation_error">
       <% sharesesh.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>

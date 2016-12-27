@@ -1,6 +1,8 @@
- <div class="container">
+ <div class="container"> 
   <h1>Your sessions</h1>
-  <div class="spacer"></div>
+  <div class="container-right">
+    <p><%= link_to "New Sesh", new_privsesh_path, class: "btn btn-secondary" %>   <%= link_to "Share a Sesh", new_sharesesh_path, class: "btn btn-secondary" %></p>
+  </div>
   <table class="table">
     <thead class="thead">
       <tr>
@@ -28,8 +30,5 @@
       <% end %>
     </tbody>
   </table>
-
   <br>
-
-  <%= link_to 'New Session', new_privsesh_path %>
 </div>

@@ -1,12 +1,15 @@
 <div class="container">
-	<h1>Make changes to your session</h1>
+	<div class="row>">
+	    <div class="offset-md-4 col-md-8">
+			<h1>Make changes to your session</h1>
 
-	<div class="spacer"></div>
+			<div class="spacer"></div>
 
-	<%= render 'form', privsesh: @privsesh %>
+			<%= render 'form', privsesh: @privsesh %>
 
-	<div class="spacer"></div>
+			<div class="spacer"></div>
 
-	<%= link_to 'Show', @privsesh %> |
-	<%= link_to 'Back', privseshes_path %>
+			<%= link_to 'Back', privseshes_path %>
+		</div>
+	</div>
 </div>

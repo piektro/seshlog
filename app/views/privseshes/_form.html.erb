@@ -1,9 +1,9 @@
 <%= form_for(privsesh) do |f| %>
   <% if privsesh.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(privsesh.errors.count, "error") %> prohibited this privsesh from being saved:</h2>
+    <div id="error_explanation" class="error_container">
+      <p class="validation_error"><%= pluralize(privsesh.errors.count, "error") %>, please correct before saving the session:</p>
 
-      <ul>
+      <ul class="validation_error">
       <% privsesh.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>

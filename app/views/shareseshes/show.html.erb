@@ -1,31 +1,35 @@
 <div class="container">
-  <p>
-    <strong>User:</strong>
-    <%= @sharesesh.user.email %>
-  </p>
+  <div class="row>">
+    <div class="offset-md-4 col-md-8">
+      <div class="card">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">
+            <%= @sharesesh.subject %>
+          </h4>
+          <p class="card-text">
+            <strong>Who:</strong>
+            <%= @sharesesh.user.email %>
+          </p>
+          <p class="card-text">
+            <strong>When:</strong>
+            <%= @sharesesh.when %>
+          </p>
 
-  <p>
-    <strong>When:</strong>
-    <%= @sharesesh.when %>
-  </p>
+          <p class="card-text">
+            <strong>Where:</strong>
+            <%= @sharesesh.where %>
+          </p>
+          <p>
+            <%= @sharesesh.yoursesh %>
+          </p>
 
-  <p>
-    <strong>Where:</strong>
-    <%= @sharesesh.where %>
-  </p>
-
-  <p>
-    <strong>Subject:</strong>
-    <%= @sharesesh.subject %>
-  </p>
-
-  <p>
-    <strong>Yoursesh:</strong>
-    <%= @sharesesh.yoursesh %>
-  </p>
-
-  <% if @sharesesh.user == current_user %>
-    <%= link_to 'Edit', edit_sharesesh_path(@sharesesh) %> |
-  <% end %>
-  <%= link_to 'Back', shareseshes_path %>
+          <% if @sharesesh.user == current_user %>
+            <%= link_to 'Edit', edit_sharesesh_path(@sharesesh) %> | <%= link_to 'Delete', @sharesesh, method: :delete, data: { confirm: 'Are you sure?' } %> | 
+          <% end %>
+          <%= link_to 'Back', shareseshes_path %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

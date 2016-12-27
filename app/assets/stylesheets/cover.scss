@@ -6,7 +6,8 @@
 a,
 a:focus,
 a:hover {
-  color: #666;
+  color: #ff6600;
+  text-decoration: underline;
 }
 
 /* Custom default button */
@@ -80,6 +81,7 @@ body {
   color: rgba(255,255,255,1);
   background-color: transparent;
   border-bottom: .25rem solid transparent;
+  text-decoration: none;
 }
 
 .nav-masthead .nav-link:hover,

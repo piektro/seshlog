@@ -1,9 +1,9 @@
 <div class="inner cover">
 	<% if user_signed_in? %>
-		<h3 class="cover-heading">Your seshlog is active</h3>
+		<h2 class="cover-heading">Your seshlog is active</h2>
 		<p class="lead">Every journey begins with a session.</p>
 		<p class="lead">
-			<a href="#" class="btn btn-secondary">See dashboard</a>
+			<%= link_to "See your dashboard", privseshes_path, class: "btn btn-primary" %>
 		</p>
 	<% else %>
 		<h1 class="cover-heading">Start logging your sessions.</h1>
