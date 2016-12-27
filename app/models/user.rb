@@ -5,4 +5,7 @@ class User < ApplicationRecord
 
   has_many :privseshes
   has_many :shareseshes
+
+  validates :username, presence: true, uniqueness: true, length: { minimum: 4 }
+  validates :name, presence: true
 end
