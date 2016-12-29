@@ -5,5 +5,7 @@ class Sharesesh < ApplicationRecord
   validates :where, presence: true
   validates :subject, presence: true
   validates :yoursesh, presence: true
-  	
+
+  has_attached_file :image, styles: {card: "334x189#", cardshow: "710x402#"}
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 end

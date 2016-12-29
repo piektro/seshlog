@@ -28,11 +28,11 @@
 
   <div class="form-inline">
     <div class="form-group">
-      <p style="font-weight: bold;">How was your Sesh?</p>
-      <%= f.radio_button :rating, 'Sucked', class: "form-control" %><label>Sucked</label>
-      <%= f.radio_button :rating, 'Was Ok', class: "form-control" %><label>Just OK</label>
-      <%= f.radio_button :rating, 'Fun', class: "form-control" %><label>FUN!</label>
-      <%= f.radio_button :rating, 'Epicness', class: "form-control" %><label>Epic!!</label>
+      <strong><%= f.label :rating, 'How was your Sesh?' %></strong>
+      <%= f.radio_button :rating, 'Sucked', class: "form-control" %><%= f.label :rating, 'Sucked' %>
+      <%= f.radio_button :rating, 'Was Ok', class: "form-control" %><%= f.label :rating, 'Just OK' %>
+      <%= f.radio_button :rating, 'Fun', class: "form-control" %><%= f.label :rating, 'FUN!' %>
+      <%= f.radio_button :rating, 'Epicness', class: "form-control" %><%= f.label :rating, 'Epic!!' %>
     </div>
   </div>
 

@@ -12,6 +12,7 @@ gem 'devise'
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'jquery-ui-rails', '~> 5.0.5'
+gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
   gem 'byebug', platform: :mri

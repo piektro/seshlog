@@ -52,8 +52,11 @@
           <%= yield %>
     
           <!-- Footer -->
-
-          <div class="mastfoot">
+          <% if action_name === "home" %>
+            <div class="mastfoot homefooter">
+          <% else %>
+            <div class="mastfoot">
+          <% end %>
             <div class="inner">
               <p>Made in <a href="http://onemonth.com/">One Month</a> by Mariachi</p>
             </div>

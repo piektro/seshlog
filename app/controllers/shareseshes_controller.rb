@@ -52,6 +52,6 @@ class ShareseshesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sharesesh_params
-      params.require(:sharesesh).permit(:when, :where, :subject, :yoursesh)
+      params.require(:sharesesh).permit(:when, :where, :subject, :yoursesh, :image)
     end
 end

@@ -1,4 +1,4 @@
-<%= form_for(sharesesh) do |f| %>
+<%= form_for(sharesesh, html: {multipart: true}) do |f| %>
   <% if sharesesh.errors.any? %>
     <div id="error_explanation" class="error_container">
       <p class="validation_error"><%= pluralize(sharesesh.errors.count, "error") %>, please correct before saving the session:</p>
@@ -12,23 +12,28 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :when %>
+    <strong><%= f.label :when %></strong>
     <%= f.date_select :when, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :where %>
+    <strong><%= f.label :where %></strong>
     <%= f.text_field :where, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :subject %>
+    <strong><%= f.label :subject %></strong>
     <%= f.text_field :subject, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :yoursesh %>
+    <strong><%= f.label :yoursesh, 'Your Sesh' %></strong>
     <%= f.text_area :yoursesh, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <strong><%= f.label :image, 'Share a photo' %></strong>
+    <%= f.file_field :image, class: "form-control" %>
   </div>
 
     <%= f.submit 'Share Sesh', class: "btn btn-primary" %>
