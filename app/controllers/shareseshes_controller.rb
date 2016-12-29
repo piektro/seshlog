@@ -1,5 +1,6 @@
 class ShareseshesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
 
   # GET /shareseshes
   def index
@@ -53,5 +54,9 @@ class ShareseshesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def sharesesh_params
       params.require(:sharesesh).permit(:when, :where, :subject, :yoursesh, :image)
+    end
+
+    def set_s3_direct_post
+      @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
     end
 end
