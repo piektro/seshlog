@@ -86,3 +86,14 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => 'seshlog.heroku.com' }
 end
+
+# Enable S3 AWS services
+config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('seshimg'),
+    access_key_id: ENV.fetch('AKIAI6LVRVTHJS2YAYKQ'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('oregon'),
+  }
+}
