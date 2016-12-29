@@ -85,9 +85,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { :host => 'seshlog.heroku.com' }
-end
 
-# Enable S3 AWS services
+  # Enable S3 AWS services
 config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
@@ -97,3 +96,6 @@ config.paperclip_defaults = {
     s3_region: ENV.fetch('oregon'),
   }
 }
+end
+
+
