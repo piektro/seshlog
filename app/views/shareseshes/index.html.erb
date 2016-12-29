@@ -20,7 +20,7 @@
         <% @shareseshes.each do |sharesesh| %>
           <div class="col-md-6 col-md-6">
             <div class="card">
-              <%= image_tag sharesesh.image(:card), class: "card-img-top img-fluid" %>
+              <%= image_tag sharesesh.image.url(:card), class: "card-img-top img-fluid" %>
               <div class="card-block">
                 <h4 class="card-title"><%= sharesesh.subject %></h4>
                 <p class="card-text"><strong><%= link_to sharesesh.user.username, user_path(sharesesh.user.username) %></strong> on <%= sharesesh.when %><br>Location: <%= sharesesh.where %></p>
