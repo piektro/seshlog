@@ -6,6 +6,6 @@ class Sharesesh < ApplicationRecord
   validates :subject, presence: true
   validates :yoursesh, presence: true
 
-  has_attached_file :image, styles: {card: "334x189#", cardshow: "710x402#"}, default_url: ->(attachment) { ActionController::Base.helpers.image_path(':style/missing.png', digest: false) }
+  has_attached_file :image, styles: {card: "334x189#", cardshow: "710x402#"}, default_url: ->(attachment) { ActionController::Base.helpers.image_path('missing.png', digest: false) }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 end
