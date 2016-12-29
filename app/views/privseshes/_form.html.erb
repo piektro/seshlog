@@ -12,27 +12,32 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :date %>
+    <strong><%= f.label :date %></strong>
     <%= f.date_select :date, class: "form-control"  %>
   </div>
 
   <div class="form-group">
-    <%= f.label :location %>
+    <strong><%= f.label :location %></strong>
     <%= f.text_field :location, class: "form-control"  %>
   </div>
 
   <div class="form-group">
-    <%= f.label :activity %>
+    <strong><%= f.label :activity %></strong>
     <%= f.text_field :activity, class: "form-control"  %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :rating %>
-    <%= f.number_field :rating, class: "form-control"  %>
+  <div class="form-inline">
+    <div class="form-group">
+      <p style="font-weight: bold;">How was your Sesh?</p>
+      <%= f.radio_button :rating, 'Sucked', class: "form-control" %><label>Sucked</label>
+      <%= f.radio_button :rating, 'Just Ok', class: "form-control" %><label>Was OK</label>
+      <%= f.radio_button :rating, 'Fun', class: "form-control" %><label>FUN!</label>
+      <%= f.radio_button :rating, 'Epicness', class: "form-control" %><label>Epic!!</label>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :note %>
+    <strong><%= f.label :note %></strong>
     <%= f.text_area :note, class: "form-control"  %>
   </div>
 
