@@ -2,7 +2,7 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Aws.config.update({
-  region: 'oregon',
+  region: 'us-west-2',
   credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY']),
 })
 
