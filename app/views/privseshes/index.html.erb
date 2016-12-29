@@ -22,7 +22,7 @@
           <td><%= privsesh.location %></td>
           <td><%= privsesh.activity %></td>
           <td><%= privsesh.rating %></td>
-          <td><%= privsesh.note %></td>
+          <td><%= privsesh.note.truncate(20) %></td>
           <td><%= link_to 'View', privsesh %></td>
           <td><%= link_to 'Edit', edit_privsesh_path(privsesh) %></td>
           <td><%= link_to 'Delete', privsesh, method: :delete, data: { confirm: 'Are you sure?' } %></td>

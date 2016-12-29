@@ -9,31 +9,26 @@
             <h4 class="card-title"><%= @user.name %></h4>
             <h6 class="card-subtitle text-muted"><%= @user.username %></h6>
           </div>
-          <img src="..." alt="Card image">
-          <div class="card-block">
-            <p class="card-text">Some quick example text of the user's bio (optional)</p>
-          </div>
       </div>
+      <% if user_signed_in? %>
+        <p><%= link_to "Share a Sesh", new_sharesesh_path, class: "btn btn-primary" %></p>
+      <% end %>
     </div>
     <div class="col-md-8">
-      <div class="card">
         <% @shareseshes.each do |sharesesh| %>
           <div class="col-md-6 col-md-6">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-block">
-              <h4 class="card-title"><%= sharesesh.subject %></h4>
-              <p class="card-text"><strong><%= link_to sharesesh.user.username, user_path(sharesesh.user.username) %></strong> on <%= sharesesh.when %><br>Location: <%= sharesesh.where %></p>
-              <p class="card-text"><%= sharesesh.yoursesh %></p>
-              <p><%= link_to 'See Sesh', sharesesh %></p>
+          <div class="card">
+              <%= image_tag sharesesh.image(:card), class: "card-img-top img-fluid" %>
+              <div class="card-block">
+                <h4 class="card-title"><%= sharesesh.subject %></h4>
+                <p class="card-text"><strong><%= link_to sharesesh.user.username, user_path(sharesesh.user.username) %></strong> on <%= sharesesh.when %><br>Location: <%= sharesesh.where %></p>
+                <p class="card-text"><%= sharesesh.yoursesh %></p>
+                <p><%= link_to 'See Sesh', sharesesh %></p>
+              </div>
             </div>
           </div>
         <% end %>
       </div>
-      
-      <% if user_signed_in? %>
-        <p><%= link_to "Share a Sesh", new_sharesesh_path, class: "btn btn-primary" %></p>
-      <% end %>
-
     </div>
   </div>
 </div>
