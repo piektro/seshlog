@@ -15,3 +15,5 @@ module Seshlog
     config.app_generators.scaffold_controller = :scaffold_controller
   end
 end
+config.assets.initialize_on_precompile = false
+
