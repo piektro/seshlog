@@ -24,7 +24,7 @@
               <div class="card-block">
                 <h4 class="card-title"><%= sharesesh.subject %></h4>
                 <p class="card-text"><strong><%= link_to sharesesh.user.username, user_path(sharesesh.user.username) %></strong> on <%= sharesesh.when %><br>Location: <%= sharesesh.where %></p>
-                <p class="card-text"><%= sharesesh.yoursesh.truncate(45) %></p>
+                <p class="card-text"><%= sharesesh.yoursesh.truncate(40) %></p>
                 <p><%= link_to 'See Sesh', sharesesh %></p>
               </div>
             </div>
